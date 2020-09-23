@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <title>My Projects</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div id="shade">
+            <div class="padding"></div>
+            <!--span>(Click anywhere to exit)</span-->
+        </div>
+        <div id="header">
+            <div id="text-container">
+                <div id="text">
+                    <h1>My Projects</h1>
+                    <p>Click on any project to see a video about it.</p>
+                </div>
+            </div>
+            <svg id="frill" preserveAspectRatio="none" width="100vw" height="5em" viewBox="0 0 2 2" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <polygon fill="white" points="0,0 1,2 2,0 2,2 0,2" />
+            </svg>
+        </div>
+        <div id="box">
+            <div class="row">
+                <div class="left">
+                    <video loop src="media/demo_raytrace.mp4" class="autoplay"></video>
+                </div>
+                <div class="right">
+                    <div class="title">Real-Time Raytracer</div>
+                    <div class="summary"> A program that renders realistic lighting in real time using raytracing.
+                    </div>
+                    <div class="body"> I wrote this project to get experience with the Vulkan API as well as with
+                        raytracing in general. It requires no specialized hardware, and can run on any device with a
+                        Vulkan-compatible GPU. It even runs on my laptop which only has Intel integrated graphics,
+                        although with a noticably slow framerate. It functions by tracing one sample per pixel and then
+                        denoising the resulting data using several bilateral blurs. Blue noise is also used to generate
+                        random sampling values to help reduce the number of artifacts present in the denoised image.
+                        Whenever possible, samples from the previous frame are carried over to the next frame. Chunks of
+                        the world are loaded dynamically so that no GPU memory is wasted storing chunks that are empty
+                        or are not visible to the user. </div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <video loop src="media/demo_synth.mp4" class="autoplay"></video>
+                </div>
+                <div class="right">
+                    <div class="title">Modular Synthesizer</div>
+                    <div class="summary"> A VST that allows artists to make a variety of different sounds. </div>
+                    <div class="body"> Modular synthesis is based on the idea of giving artists a box of audio
+                        processing components and letting the artist hook them up any way they want. I wanted to look
+                        into digital versions of this, but was frustrated by how many available options were either too
+                        limited or too tedious to use. I decided to make my own. Modules are displayed on the right-hand
+                        side of the screen. Modules can be connected to each other by dragging wires between two
+                        sockets. The left hand side shows controls for the currently selected module. Each knob can
+                        either be manually set to a fixed value, or controlled by another module (or multiple modules)
+                        through a wire. </div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <video loop src="media/demo_game.mp4" class="autoplay"></video>
+                </div>
+                <div class="right">
+                    <div class="title">Game Jam Games</div>
+                    <div class="summary">3 different games, each one made in only a few days.</div>
+                    <div class="body"> I find game development to be a fun way to gain programming experience. The three
+                        games in this video were created for 'game jams' - events where individuals and teams compete to
+                        create games based on a particular theme within a short amount of time. The first game in the
+                        video is "Yarn Arsonist", created under the theme "One Shot". The idea is you only get one match
+                        to burn down the whole building. The challenge is to string things together as much as possible
+                        before using up your single match. The second game shown is "Shadow Ops", created under the
+                        theme "Shadow Puppets". It has a variety of mechanics, the main one being that you can pop out
+                        of and into the bodies of any guard. Different guards have different items that can be used to
+                        reach the end of the level. The third game shown has a very long name, and was created under the
+                        theme "Sticky Justice". Many different games have slimes as enemies, but I wanted to make the
+                        game more interesting than your average slime genocide simulator. Instead, the slimes serve a
+                        dual purpose as a puzzle mechanic, as you are able to stick to whatever walls you hit them
+                        against. <div class="click-hint"><span>Click for more info.</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <video loop src="media/demo_bank.mp4" class="autoplay"></video>
+                </div>
+                <div class="right">
+                    <div class="title">Mock Bank</div>
+                    <div class="summary"> A webapp for a simulated bank, running as part of a simulated society. </div>
+                    <div class="body"> I created this project for a past class of mine. One of the
+                        components of the class was a social justice simulation. Every student became citizens in a
+                        simulated society. They performed jobs, payed rent, owned property (desks), and made laws. My
+                        job was to be the banker and keep track of everyone's finances. This mostly meant keeping track
+                        of rent, salaries, and payments. In addition, there were often randomized events that impacted
+                        everyone's finances, such as "major economic crisis" or "reversal of fortune". Normally, all of
+                        these tasks were done semi-manually with an Excel spreadsheet. I decided to use my programming
+                        knowledge to build a webapp to automate most all of the tasks I needed to do. I also released
+                        the app to other class periods who were doing their own simulations, and took bug reports and
+                        feature requests from the bankers in those periods. </div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <img src="media/no_video_yet.png" class="placeholder">
+                </div>
+                <div class="right">
+                    <div class="title">Waveguide</div>
+                    <div class="summary"> A work-in-progress language and compiler designed to allow for optimization
+                        during runtime. </div>
+                    <div class="body"> This project got started while I was working on the synthesizer mentioned above.
+                        I noticed that there were many parameters that, if set to a constant value, would allow a large
+                        portion of their corresponding computation to be done only once. However, it is also possible
+                        for the user to connect wires such that these parameters changes constantly. Because of this,
+                        all parameters have to be programmed to allow for this case, which is sometimes much more
+                        expensive. The idea behind this project is to make a compiler that is embedded into a larger
+                        application. The larger application can then compile Waveguide source files on the fly, applying
+                        optimizations based on known inputs. This optimized code can then be run as a regular function
+                        inside the larger application. </div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="bottom-space"></div>
+        </div>
+    </div>
+</body>
+
+</html>
