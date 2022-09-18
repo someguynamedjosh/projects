@@ -6,7 +6,8 @@ html {
 }
 body {
     margin: 0;
-    background: #ffffff;
+    background: #081018;
+    color: #ffffff;
 }
 
 #root {
@@ -17,8 +18,8 @@ body {
 
 #header {
     position: sticky;
-    background: linear-gradient(#2196f3, #6fc6d1);
-    height: 15em;
+    background: linear-gradient(#4121f3, #1792e9);
+    height: calc(max(50vh - 15em, 15em));
     margin-bottom: 2em;
 }
 #header #text-container {
@@ -52,7 +53,7 @@ body {
     display: grid;
     grid-template-columns: auto; 
     grid-auto-rows: 18vw;
-    row-gap: 1em;
+    row-gap: 2vw;
     margin: auto;
     width: min-content;
 }
@@ -82,13 +83,13 @@ body {
 .row {
     display: grid;
     grid-template-columns: 24vw 39vw;
-    column-gap: 1em;
+    column-gap: 1vw;
 }
 .left {
-    background: transparent;
+    background: #000000;
 }
 .right {
-    background: #ffffff;
+    background: #102030;
     padding: 1em;
     box-sizing: border-box;
     display: grid;
@@ -119,6 +120,7 @@ video {
 }
 .row .body {
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 .row .click-hint {
     text-align: center;
@@ -127,7 +129,7 @@ video {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent 0% 50%, white 90% 100%);
+    background: linear-gradient(transparent 0% 50%, #000005 90% 100%);
     opacity: 1;
     transition: 0.6s;
 }
@@ -145,10 +147,10 @@ video {
     transition: 0.3s;
 }
 .row:hover .left {
-    transform: perspective(50em) translateZ(2em) translateX(-0.5em);
+    transform: perspective(100vh) translateZ(2em) translateX(-0.5em);
 } 
 .row:hover .right {
-    transform: perspective(50em) translateZ(2em) translateX(1em);
+    transform: perspective(100vh) translateZ(2em) translateX(1em);
 }
 
 .row.active .left, .row.active .right {
@@ -157,12 +159,12 @@ video {
     transition: 0.6s;
 }
 .row.active .left {
-    transform: perspective(50em) translateX(50%) scale(1.5) rotateY(20deg) translateX(-50%);
+    transform: perspective(100vh) translateX(50%) scale(1.5) rotateY(20deg) translateX(-50%);
 }
 .row.active .right {
-    transform: perspective(50em) translateX(-50%) scale(1.25) rotateY(-10deg) translateX(50%);
-    height: 30em;
-    margin-top: calc((30em - 18vw) / -2);
+    transform: perspective(100vh) translateX(-50%) scale(1.25) rotateY(-10deg) translateX(50%);
+    height: 60vh;
+    margin-top: calc((60vh - 18vw) / -2);
     overflow-y: scroll;
 }
 .row.active .click-hint {

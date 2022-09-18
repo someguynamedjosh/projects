@@ -21,10 +21,45 @@
             </div>
             <svg id="frill" preserveAspectRatio="none" width="100vw" height="5em" viewBox="0 0 2 2" version="1.1"
                 xmlns="http://www.w3.org/2000/svg">
-                <polygon fill="white" points="0,0 1,2 2,0 2,2 0,2" />
+                <polygon fill="#081018" points="0,0 1,2 2,0 2,2 0,2" />
             </svg>
         </div>
         <div id="box">
+            <div class="row">
+                <div class="left">
+                    <video loop src="media/demo_synth.mp4" class="autoplay"></video>
+                </div>
+                <div class="right">
+                    <div class="title">Modular Synthesizer</div>
+                    <div class="summary"> A VST that allows artists to make a variety of different sounds. </div>
+                    <div class="body"> Modular synthesis is based on the idea of giving artists a box of audio
+                        processing components and letting the artist hook them up any way they want. I wanted to look
+                        into digital versions of this, but was frustrated by how many available options were either too
+                        limited or too tedious to use. I decided to make my own. Modules can be connected to each other
+                        by dragging wires between two sockets. The knobs each module comes with can also be controlled
+                        by the outputs of other modules.</div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <img src="media/ouroboros-symbol.jpg" class="placeholder">
+                </div>
+                <div class="right">
+                    <div class="title">Ouroboros</div>
+                    <div class="summary"> A library for safely creating self-referential structs in Rust.
+                    </div>
+                    <div class="body"> A key feature of Rust is that it guarantees that all references are not null at
+                        compile time. It does this with a feature called 'lifetimes', which allows you to say things
+                        like "this function returns a reference pointing to data contained in the first argument". The
+                        compiler will then check that you only use that reference before the data passed as the first
+                        argument is destroyed. A key limitation of this is that you cannot describe structs that contain
+                        references pointing to other fields of that same struct. The crate I made fixes this, handling
+                        all the myriad complications with grace and elegance. With over three million downloads on
+                        crates.io, it's certainly been a welcomed addition to the Rust ecosystem.</div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
             <div class="row">
                 <div class="left">
                     <video loop src="media/demo_raytrace.mp4" class="autoplay"></video>
@@ -47,20 +82,61 @@
             </div>
             <div class="row">
                 <div class="left">
-                    <video loop src="media/demo_synth.mp4" class="autoplay"></video>
+                    <img src="media/nebula.png" class="placeholder">
                 </div>
                 <div class="right">
-                    <div class="title">Modular Synthesizer</div>
-                    <div class="summary"> A VST that allows artists to make a variety of different sounds. </div>
-                    <div class="body"> Modular synthesis is based on the idea of giving artists a box of audio
-                        processing components and letting the artist hook them up any way they want. I wanted to look
-                        into digital versions of this, but was frustrated by how many available options were either too
-                        limited or too tedious to use. I decided to make my own. Modules are displayed on the right-hand
-                        side of the screen. Modules can be connected to each other by dragging wires between two
-                        sockets. The left hand side shows controls for the currently selected module. Each knob can
-                        either be manually set to a fixed value, or controlled by another module (or multiple modules)
-                        through a wire. </div>
+                    <div class="title">Procedural Nebula</div>
+                    <div class="summary">A nebula, complete with stars, generated entirely from code.
+                    </div>
+                    <div class="body">
+                        Procedural generation is a category of techniques used to generate beautiful structures and
+                        landscapes from nothing but a pile of code. This picture showcases one of the infinite possible
+                        results from an algorithm I developed myself. The core idea is surprisingly simple. Generation
+                        starts with a single circle filling the screen. This circle is divided randomly into several
+                        smaller circles. This process repeats until the circles are smaller than the pixels on the
+                        screen. Shading in the resulting circles produces the organic shape shown. Stars and shading are
+                        added to contribute to the appearance of the nebula.
+                    </div>
                     <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <img src="media/mountain.png" class="placeholder">
+                </div>
+                <div class="right">
+                    <div class="title">Procedural Mountain</div>
+                    <div class="summary">A mountain made from pure code.
+                    </div>
+                    <div class="body">
+                        Procedural generation is a category of techniques used to generate beautiful structures and
+                        landscapes from nothing but a pile of code. This particular algorithm is an improved mountain
+                        generator I made. The typical way to procedurally generate mountains is to use a technique
+                        called Perlin noise. However, I was unhappy with the discrepencies between the kind of mountains
+                        produced by such a technique compared to the shape of mountains in real life. I devised a novel
+                        algorithm based on patterns I saw in real-world data. The algorithm I made generates heightmaps,
+                        which I then put into Blender to make a finished image. The bumpiness is an artifact of the
+                        rendering process which I was unsure how to fix.
+                    </div>
+                    <div class="click-hint"><span>Click for more info.</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <video loop src="media/BeamDemo.webm" class="autoplay"></video>
+                </div>
+                <div class="right">
+                    <div class="title">Beam Machines</div>
+                    <div class="summary">A game made in a week.</div>
+                    <div class="body"> I find game development to be a fun way to gain programming experience. The
+                        game in this video was created for a 'game jam' - an event where individuals and teams compete
+                        to create games based on a particular theme within a short amount of time. This game, while
+                        boasting a simple but powerful set of mechanics, demanded much technical attention. It took a
+                        lot of effort and ingenuity to iron out as many corner cases in the physics engine as possible.
+                        There are still a couple left in the game (practically no jam games are finished when they are
+                        released) but it was still a great release, garnering significant praise from the community.
+                        <div class="click-hint"><span>Click for more info.</span></div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -106,27 +182,6 @@
                     <div class="click-hint"><span>Click for more info.</span></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="left">
-                    <img src="media/no_video_yet.png" class="placeholder">
-                </div>
-                <div class="right">
-                    <div class="title">Waveguide</div>
-                    <div class="summary"> A work-in-progress language and compiler designed to allow for optimization
-                        during runtime. </div>
-                    <div class="body"> This project got started while I was working on the synthesizer mentioned above.
-                        I noticed that there were many parameters that, if set to a constant value, would allow a large
-                        portion of their corresponding computation to be done only once. However, it is also possible
-                        for the user to connect wires such that these parameters changes constantly. Because of this,
-                        all parameters have to be programmed to allow for this case, which is sometimes much more
-                        expensive. The idea behind this project is to make a compiler that is embedded into a larger
-                        application. The larger application can then compile Waveguide source files on the fly, applying
-                        optimizations based on known inputs. This optimized code can then be run as a regular function
-                        inside the larger application. </div>
-                    <div class="click-hint"><span>Click for more info.</span></div>
-                </div>
-            </div>
-            <div class="bottom-space"></div>
         </div>
     </div>
 </body>
